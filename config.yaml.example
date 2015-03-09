@@ -1,0 +1,35 @@
+postgre_conf:
+#    dsn: None
+    database: db_name
+    user: postgres
+    password: postgres
+    host: localhost
+    port: 5432
+#    connection_factory: None
+#    cursor_factory: None
+    async: False
+    # stored data table
+    table_name: test_table
+    saving_columns: ['sn', 'mail', 'userPrincipalName', 'userPassword', 'unicodePwd', 'unixUserPassword']  # 'samaccountname'
+
+ldap_conf:
+    # remote uri
+    hostname: ip or url
+    # ldap port
+    port: 389
+    # user name
+    un: login_name
+    # user password
+    password: secret
+    #
+    domain_name: some_org
+    base_dn: 'cn=Users,dc=ad,dc=test'
+    filter: 'objectclass=user'
+    attrs: ['sAMAccountName', 'mail',  'unicodePwd', 'DBCSPwd', 'sn', 'userPrincipalName', 'userPassword', 'unicodePwd', 'unixUserPassword']
+
+#    encryption: None
+#    require_cert: None
+    debug: True
+#    initialize_kwargs: None
+#    options: None
+#    search_defaults: None
